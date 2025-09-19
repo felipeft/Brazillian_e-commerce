@@ -1,0 +1,18 @@
+# Ignora a pasta de dados brutos
+data/olist/
+
+# Ignora a pasta de dados processados
+data/processed/
+
+# Ignora a pasta onde o modelo treinado será salvo
+models/*.pkl
+
+# Ignora a pasta de cache do Streamlit
+.streamlit/
+
+# Ignora a pasta de cache do Python
+__pycache__/
+
+# Ignora a pasta de ambiente virtual
+.venv/
+venv/
