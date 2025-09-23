@@ -6,10 +6,12 @@ Este é um projeto de Machine Learning e Data Science, focado na previsão de at
 
 O objetivo principal deste projeto é construir um **modelo de classificação** que prevê se um pedido será entregue **no prazo** ou **com atraso**. Para isso, o projeto cobre o ciclo de vida completo do desenvolvimento de um modelo, incluindo:
 
-  * **Engenharia de Features:** Pré-processamento e criação de variáveis a partir dos dados brutos.
-  * **Treinamento de Modelo:** Construção de um pipeline de Machine Learning utilizando `Scikit-learn`.
-  * **Modularização do Código:** Código organizado em módulos Python para facilitar a manutenção e o reuso.
-  * **Aplicação Web Interativa:** Um dashboard construído com `Streamlit` que permite a interação com o modelo para fazer previsões em tempo real.
+  - **Engenharia de Features:** Pré-processamento e criação de variáveis mais robustas a partir dos dados brutos, como o tempo de aprovação de pagamento e de envio para a transportadora.
+  - **Experimentação e Otimização:** Experimentação com múltiplos modelos de classificação (Regressão Logística, Árvore de Decisão e Random Forest) e comparação de suas métricas de desempenho.
+  - **Tratamento de Dados Desbalanceados:** Aplicação da técnica de **SMOTE** para balancear o conjunto de dados e melhorar a capacidade do modelo de prever a classe minoritária (pedidos com atraso).
+  - **Treinamento de Modelo:** Construção de um pipeline de Machine Learning robusto com `scikit-learn` e `imbalanced-learn`.
+  - **Modularização do Código:** Código organizado em módulos Python para facilitar a manutenção e o reuso.
+  - **Aplicação Web Interativa:** Um dashboard construído com `Streamlit` que permite a interação com o melhor modelo para fazer previsões em tempo real.
 
 ## Estrutura do Repositório
 
@@ -18,7 +20,7 @@ O projeto é organizado em uma estrutura modular para replicar um ambiente de pr
 ```
 Brazilian_E-Commerce/
 ├── data/
-│   ├── olist/           (dados brutos, ignorado pelo Git)
+│   ├── raw/           (dados brutos, ignorado pelo Git)
 │   └── processed/     (dados limpos e prontos para o modelo, ignorado pelo Git)
 │
 ├── notebooks/         (notebooks para exploração e experimentação)
@@ -65,7 +67,7 @@ Para testar o projeto localmente, siga os passos abaixo:
     ```
 
 4.  **Baixe o Dataset**
-    O conjunto de dados público da Olist não está incluído no repositório. Baixe-o do Kaggle e salve os arquivos `.csv` na pasta `data/`.
+    O conjunto de dados público da Olist não está incluído no repositório. Baixe-o do Kaggle e salve os arquivos `.csv` na pasta `data/raw/`.
 
     [**Dataset da Olist no Kaggle**](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
@@ -87,7 +89,7 @@ Para testar o projeto localmente, siga os passos abaixo:
 
 ## Dashboard da Aplicação
 
-O dashboard do Streamlit fornece uma interface simples e intuitiva para fazer previsões com o modelo treinado.
+O dashboard do Streamlit fornece uma interface simples e intuitiva para fazer previsões com o modelo otimizado.
 
 ![Tela da aplicação](screenshot.png)
 
@@ -95,6 +97,6 @@ O dashboard do Streamlit fornece uma interface simples e intuitiva para fazer pr
 
   * **Python**: A linguagem principal do projeto.
   * **Pandas**: Manipulação e análise dos dados.
-  * **Scikit-learn**: Construção do pipeline e treinamento do modelo.
+  * **Scikit-learn** & **Imbalanced-learn**: Construção do pipeline e treinamento do modelo.
   * **Streamlit**: Criação da aplicação web interativa.
   * **Git**: Controle de versão do código.
